@@ -1,0 +1,7 @@
+username         = "vagrant"
+password         = "vagrant"
+timezone         = "UTC"
+grub_disk        = "/dev/sda"
+hostname         = "debian-vm"
+vm_name          = "debian-ssh-vm"
+output_directory = "output-debian"

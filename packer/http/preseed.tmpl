@@ -1,0 +1,44 @@
+### Locale and Keyboard
+d-i debian-installer/locale string en_US
+d-i console-setup/ask_detect boolean false
+d-i console-setup/layoutcode string us
+
+### Networking
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string {{hostname}}
+
+### Timezone
+d-i clock-setup/utc boolean true
+d-i time/zone string {{timezone}}
+
+### Partitioning
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe select atomic
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-md/device_remove_md boolean true
+d-i partman-lvm/confirm boolean true
+d-i partman-lvm/confirm_nooverwrite boolean true
+d-i partman/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+
+### User account
+d-i passwd/root-login boolean false
+d-i passwd/user-fullname string {{username}}
+d-i passwd/username string {{username}}
+d-i passwd/user-password password {{password}}
+d-i passwd/user-password-again password {{password}}
+d-i user-setup/allow-password-weak boolean true
+d-i user-setup/encrypt-home boolean false
+
+### Packages
+d-i pkgsel/include string openssh-server sudo
+
+### Bootloader
+d-i grub-installer/bootdev string {{grub_disk}}
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/with_other_os boolean true
+
+### Finish install
+d-i finish-install/reboot_in_progress note
