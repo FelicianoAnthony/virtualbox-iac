@@ -82,7 +82,7 @@ This setup is ideal for:
 ### 1. Configure
 
 - Ensure `.env.pkvars.hcl` contains your Packer/Terraform variables (e.g. SSH user, VM name, etc.)
-- Make sure `debian-12.11.0-amd64-netinst.iso` is present in the root directory
+- Download [debian-12.11.0-amd64-netinst.iso](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.11.0-amd64-netinst.iso) and place in root directory
 
 ### 2. Build and Provision
 

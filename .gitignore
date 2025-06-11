@@ -1,4 +1,9 @@
+# Terraform state
+terraform/terraform.tfstate
+terraform/*.tfstate.backup
+
 packer/http/preseed.cfg
 output-debian/
 terraform/.terraform
 *.iso
+
